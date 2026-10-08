@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Kitcha's Food design tokens — warm Indian palette (saffron / turmeric / terracotta)
+  over cream/warm neutrals. All colors are HSL triples (no leading hsl()) so Tailwind's
+  hsl(var(--token)) wrapper in tailwind.config.ts can apply opacity modifiers.
+  NEVER hardcode a hex/rgb color or text-white/bg-black in components — use these tokens.
+*/
+
+@layer base {
+  :root {
+    --background: 36 45% 97%;
+    --foreground: 20 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 25% 15%;
+
+    /* Saffron — primary */
+    --primary: 27 96% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Turmeric — secondary / accent */
+    --secondary: 45 93% 55%;
+    --secondary-foreground: 20 25% 15%;
+
+    --accent: 45 93% 55%;
+    --accent-foreground: 20 25% 15%;
+
+    /* Terracotta — used for gradients and highlights */
+    --terracotta: 15 65% 50%;
+    --terracotta-foreground: 0 0% 100%;
+
+    --muted: 36 30% 92%;
+    --muted-foreground: 20 15% 40%;
+
+    --success: 142 71% 35%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 20 25% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 36 25% 88%;
+    --input: 36 25% 88%;
+    --ring: 27 96% 54%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 20 20% 8%;
+    --foreground: 36 30% 92%;
+
+    --card: 20 18% 11%;
+    --card-foreground: 36 30% 92%;
+
+    --popover: 20 18% 11%;
+    --popover-foreground: 36 30% 92%;
+
+    --primary: 27 96% 58%;
+    --primary-foreground: 20 25% 10%;
+
+    --secondary: 45 90% 55%;
+    --secondary-foreground: 20 25% 10%;
+
+    --accent: 45 90% 55%;
+    --accent-foreground: 20 25% 10%;
+
+    --terracotta: 15 60% 55%;
+    --terracotta-foreground: 20 25% 10%;
+
+    --muted: 20 15% 18%;
+    --muted-foreground: 36 15% 65%;
+
+    --success: 142 60% 45%;
+    --success-foreground: 20 25% 10%;
+
+    --warning: 38 85% 55%;
+    --warning-foreground: 20 25% 10%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 15% 20%;
+    --input: 20 15% 20%;
+    --ring: 27 96% 58%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-hero bg-clip-text text-transparent;
+  }
+
+  .btn-hero {
+    @apply bg-gradient-hero text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:scale-[1.02];
+  }
+}
