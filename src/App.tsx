@@ -10,6 +10,7 @@ import { CartProvider } from '@/contexts/CartContext'
 import ComingSoon from '@/pages/ComingSoon'
 import Index from '@/pages/Index'
 import Login from '@/pages/Login'
+import Menu from '@/pages/Menu'
 import NotFound from '@/pages/NotFound'
 import Signup from '@/pages/Signup'
 
@@ -31,7 +32,7 @@ export default function App() {
                   <Route path="/" element={<Index />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/signup" element={<Signup />} />
-                  <Route path="/menu" element={<ComingSoon title="Menu" />} />
+                  <Route path="/menu" element={<Menu />} />
                   <Route path="/subscriptions" element={<ComingSoon title="Subscriptions" />} />
                   <Route path="/catering" element={<ComingSoon title="Catering" />} />
                   <Route path="/checkout" element={<ComingSoon title="Checkout" />} />
