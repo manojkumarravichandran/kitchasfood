@@ -7,6 +7,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Toaster } from '@/components/ui/toaster'
 import { AuthProvider } from '@/contexts/AuthContext'
 import { CartProvider } from '@/contexts/CartContext'
+import Admin from '@/pages/Admin'
 import ComingSoon from '@/pages/ComingSoon'
 import Index from '@/pages/Index'
 import Login from '@/pages/Login'
@@ -41,7 +42,7 @@ export default function App() {
                   <Route path="/profile" element={<ComingSoon title="Profile" />} />
                   <Route path="/diet-plan" element={<ComingSoon title="Diet Plan" />} />
                   <Route path="/preorder" element={<ComingSoon title="Pre-order" />} />
-                  <Route path="/admin" element={<ComingSoon title="Admin Dashboard" />} />
+                  <Route path="/admin" element={<Admin />} />
                   <Route path="/dashboard" element={<ComingSoon title="Dashboard" />} />
                   <Route path="/kitchen" element={<ComingSoon title="Kitchen Dashboard" />} />
                   <Route path="/inventory" element={<ComingSoon title="Inventory" />} />

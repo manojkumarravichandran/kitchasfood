@@ -1,0 +1,14 @@
+-- Fix: admins could never actually assign/revoke staff roles.
+--
+-- public.user_roles only ever granted SELECT to the `authenticated` Postgres
+-- role (see 20261008000000_initial_schema.sql). The RLS policy "Admins manage
+-- roles" (for all, using has_role(..., 'admin')) was written correctly, but
+-- RLS only narrows what a GRANT already permits — it never substitutes for a
+-- missing GRANT. With no INSERT/UPDATE/DELETE grant, every attempt by an
+-- admin to write to user_roles via the normal authenticated client fails with
+-- "permission denied for table user_roles" before RLS is ever consulted.
+--
+-- Confirmed locally (fresh Postgres 16, stubbed auth schema): an authenticated
+-- admin's INSERT into user_roles failed with exactly that error prior to this
+-- migration. Needed before any admin staff-management UI can work at all.
+grant insert, update, delete on public.user_roles to authenticated;
