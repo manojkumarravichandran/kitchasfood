@@ -13,6 +13,7 @@ import Login from '@/pages/Login'
 import Menu from '@/pages/Menu'
 import NotFound from '@/pages/NotFound'
 import Signup from '@/pages/Signup'
+import Subscriptions from '@/pages/Subscriptions'
 
 const queryClient = new QueryClient()
 
@@ -33,7 +34,7 @@ export default function App() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/signup" element={<Signup />} />
                   <Route path="/menu" element={<Menu />} />
-                  <Route path="/subscriptions" element={<ComingSoon title="Subscriptions" />} />
+                  <Route path="/subscriptions" element={<Subscriptions />} />
                   <Route path="/catering" element={<ComingSoon title="Catering" />} />
                   <Route path="/checkout" element={<ComingSoon title="Checkout" />} />
                   <Route path="/orders" element={<ComingSoon title="Your Orders" />} />
