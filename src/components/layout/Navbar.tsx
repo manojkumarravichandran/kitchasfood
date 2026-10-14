@@ -20,6 +20,9 @@ export function Navbar() {
   const navigate = useNavigate()
 
   const links = isKbrOrYubi ? [...customerNavLinks, { to: '/catering', label: 'Catering' }] : customerNavLinks
+  // "My Orders" only makes sense once logged in — order history is tied to
+  // the signed-in account, same gating the Orders page itself already does.
+  const visibleLinks = user ? [...links, { to: '/orders', label: 'My Orders' }] : links
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur">
@@ -27,7 +30,7 @@ export function Navbar() {
         <Logo />
 
         <nav className="hidden items-center gap-6 md:flex">
-          {links.map((link) => (
+          {visibleLinks.map((link) => (
             <Link key={link.to} to={link.to} className="text-sm font-medium text-foreground/80 hover:text-foreground">
               {link.label}
             </Link>
@@ -69,7 +72,7 @@ export function Navbar() {
 
       {open && (
         <nav className="flex flex-col gap-1 border-t border-border bg-background px-4 py-3 md:hidden">
-          {links.map((link) => (
+          {visibleLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
