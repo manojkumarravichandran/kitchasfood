@@ -8,11 +8,13 @@ import { Toaster } from '@/components/ui/toaster'
 import { AuthProvider } from '@/contexts/AuthContext'
 import { CartProvider } from '@/contexts/CartContext'
 import Admin from '@/pages/Admin'
+import Checkout from '@/pages/Checkout'
 import ComingSoon from '@/pages/ComingSoon'
 import Index from '@/pages/Index'
 import Login from '@/pages/Login'
 import Menu from '@/pages/Menu'
 import NotFound from '@/pages/NotFound'
+import Orders from '@/pages/Orders'
 import Signup from '@/pages/Signup'
 import Subscriptions from '@/pages/Subscriptions'
 
@@ -37,8 +39,8 @@ export default function App() {
                   <Route path="/menu" element={<Menu />} />
                   <Route path="/subscriptions" element={<Subscriptions />} />
                   <Route path="/catering" element={<ComingSoon title="Catering" />} />
-                  <Route path="/checkout" element={<ComingSoon title="Checkout" />} />
-                  <Route path="/orders" element={<ComingSoon title="Your Orders" />} />
+                  <Route path="/checkout" element={<Checkout />} />
+                  <Route path="/orders" element={<Orders />} />
                   <Route path="/profile" element={<ComingSoon title="Profile" />} />
                   <Route path="/diet-plan" element={<ComingSoon title="Diet Plan" />} />
                   <Route path="/preorder" element={<ComingSoon title="Pre-order" />} />
