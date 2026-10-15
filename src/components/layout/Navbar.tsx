@@ -40,6 +40,11 @@ export function Navbar() {
               Staff dashboard
             </Link>
           )}
+          {isStaff && (
+            <Link to="/inventory" className="text-sm font-medium text-foreground/80 hover:text-foreground">
+              Inventory
+            </Link>
+          )}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -85,6 +90,11 @@ export function Navbar() {
           {isStaff && (
             <Link to="/admin" onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium hover:bg-muted">
               Staff dashboard
+            </Link>
+          )}
+          {isStaff && (
+            <Link to="/inventory" onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium hover:bg-muted">
+              Inventory
             </Link>
           )}
         </nav>

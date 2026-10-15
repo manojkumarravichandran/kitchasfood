@@ -11,6 +11,7 @@ import Admin from '@/pages/Admin'
 import Checkout from '@/pages/Checkout'
 import ComingSoon from '@/pages/ComingSoon'
 import Index from '@/pages/Index'
+import Inventory from '@/pages/Inventory'
 import Login from '@/pages/Login'
 import Menu from '@/pages/Menu'
 import NotFound from '@/pages/NotFound'
@@ -47,7 +48,7 @@ export default function App() {
                   <Route path="/admin" element={<Admin />} />
                   <Route path="/dashboard" element={<ComingSoon title="Dashboard" />} />
                   <Route path="/kitchen" element={<ComingSoon title="Kitchen Dashboard" />} />
-                  <Route path="/inventory" element={<ComingSoon title="Inventory" />} />
+                  <Route path="/inventory" element={<Inventory />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>

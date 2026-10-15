@@ -9,12 +9,18 @@ export type Json = string | number | boolean | null | { [key: string]: Json | un
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyTable = { Row: any; Insert: any; Update: any; Relationships: [] }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnyFunction = { Args: any; Returns: any }
 
 export interface Database {
   public: {
     Tables: Record<string, AnyTable>
     Views: Record<string, never>
-    Functions: Record<string, never>
+    // Loosened the same way as Tables above — added when the first .rpc()
+    // call (record_inventory_transaction, Inventory.tsx) needed a Functions
+    // entry that wasn't `never` to type-check. Real `supabase gen types` will
+    // overwrite this with the actual function signature.
+    Functions: Record<string, AnyFunction>
     Enums: Record<string, never>
     CompositeTypes: Record<string, never>
   }
